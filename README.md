@@ -1,8 +1,22 @@
 # wordpress-lite
 
-wordpress with sqlite database in 2 versions: fpm with nginx and standalone container apache
+wordpress with sqlite database in 3 versions
 
-## fpm version with nginx
+## fpm version with nginx on one container
+
+image size:
+
+- galileo/wordpress-fpm-lite: 300M
+
+```
+cd fpm-lite
+docker compose build
+docker compose up
+```
+
+open browser to http://localhost:8081
+
+## fpm version with nginx on two containers
 
 image size:
 

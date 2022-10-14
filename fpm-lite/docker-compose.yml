@@ -1,0 +1,16 @@
+version: '3'
+services:
+  wordpress:
+    image: galileo/wordpress-fpm-lite
+    build:
+      context: ./wordpress
+      args:
+        worker_processes: 3
+    ports:
+      - "8081:80"
+
+    #environment:
+    #  - WP_HOME=https://mysite.com
+    #  - WP_SITEURL=https://mysite.com
+    volumes:
+      - ./data:/var/www/html

@@ -1,0 +1,14 @@
+# https://taskfile.dev
+
+version: '3'
+
+tasks:
+  build:
+    cmds:
+      - docker compose build
+
+  publish:
+    cmds:
+      - task: build
+      - docker tag galileo/wordpress-fpm-lite docker.csgalileo.org/galileo/wordpress-fpm-lite:6.0.2
+      - docker push docker.csgalileo.org/galileo/wordpress-fpm-lite:6.0.2
