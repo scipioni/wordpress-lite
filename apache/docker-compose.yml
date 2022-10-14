@@ -1,0 +1,11 @@
+version: '3'
+services:
+  wordpress:
+    image: galileo/wordpress-apache
+    build:
+      context: .
+    volumes:
+      - ./data:/var/www/html
+    ports:
+      - "8081:80"
+
