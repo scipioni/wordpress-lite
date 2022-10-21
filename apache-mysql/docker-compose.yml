@@ -1,0 +1,28 @@
+version: '3'
+name: 'wordpress'
+services:
+  wordpress:
+    image: wordpress:6.0.3-apache
+    #build:
+    #  context: .
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+    volumes:
+      - ./data:/var/www/html
+      - ./custom.ini:/usr/local/etc/php/conf.d/custom.ini
+    ports:
+      - "8081:80"
+
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+    volumes:
+      - ./data-mysql:/var/lib/mysql

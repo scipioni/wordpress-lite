@@ -14,3 +14,4 @@ tasks:
       - docker push docker.csgalileo.org/galileo/wordpress-fpm:6.0.2
       - docker tag galileo/wordpress-nginx docker.csgalileo.org/galileo/wordpress-nginx:latest
       - docker push docker.csgalileo.org/galileo/wordpress-nginx:latest
+
